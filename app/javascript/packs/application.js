@@ -7,4 +7,18 @@
 // To reference this file, add <%= javascript_pack_tag 'application' %> to the appropriate
 // layout file, like app/views/layouts/application.html.erb
 
-console.log('Hello World from Webpacker')
+import Vue from 'vue'
+import App from '../topics.vue'
+import VueResource from 'vue-resource'
+Vue.use(VueResource);
+
+document.addEventListener('DOMContentLoaded', () => {
+  Vue.http.headers.common['X-CSRF-Token'] = document.getElementsByName('csrf-token')[0].getAttribute('content')
+  const el = "#topics"
+  const app = new Vue({
+    el,
+    render: h => h(App)
+  })
+
+  console.log(app)
+})
