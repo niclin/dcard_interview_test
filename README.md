@@ -1,24 +1,42 @@
-# README
+## 題目描述
+請實作⼀一個網站並滿⾜足以下需求:
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+- ⾸首⾴頁上顯⽰示⽂文章列列表和建立⽂文章的按鈕
+- 能夠對個別⽂文章按讚
+- 根據讚數排序⽂文章，比較多讚的⽂文章排在前⾯面
+- 可以使⽤用任意資料庫
+- 請實作 SPA (Single Page Application)
 
-Things you may want to cover:
+## 技術棧
 
-* Ruby version
+- Backend: Ruby on Rails 5.1
+- Front-end: Vue 2.5.17
+- Database: postgreSQL
 
-* System dependencies
+## Setup
 
-* Configuration
+### step 1
 
-* Database creation
+安裝前端所需依賴
 
-* Database initialization
+```
+yarn install
+```
 
-* How to run the test suite
+### step 2
 
-* Services (job queues, cache servers, search engines, etc.)
+建立數據庫
 
-* Deployment instructions
+```
+rake db:create rake db:migrate
+```
 
-* ...
+### step 3
+
+運行 server
+
+```
+rails server
+```
+
+查看 `localhost:3000` 可以看到符合上述 spec 的畫面
