@@ -18,7 +18,10 @@
         <tr v-for="topic in topics" >
           <td>{{ topic.title }}</td>
           <td>{{ topic.description }}</td>
-          <td>{{ topic.likes_count}}</td>
+          <td>
+            {{ topic.likes_count}}
+            <button @click="addLike(topic.id)" class="btn btn-primary">like</button>
+          </td>
         </tr>
       </tbody>
     </table>
@@ -44,9 +47,15 @@ export default {
   },
 
   methods: {
-    addTopic() {
+    addTopic () {
        this.$http.post('topics.json', { title: this.topics.title, description: this.topics.description }, {})
       .then((res) => this.fetchTopics(), this.topic = '')
+      .catch((error) => console.log('Got a problem' + error));
+    },
+
+    addLike (id) {
+      this.$http.patch(`/topics/${id}/like`, {}, {})
+      .then((res) => this.fetchTopics())
       .catch((error) => console.log('Got a problem' + error));
     },
 
