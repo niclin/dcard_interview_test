@@ -32,10 +32,7 @@
 export default {
   data () {
     return {
-      topics: [
-        { title: "Foo", likes_count: 5 },
-        { title: "Bar", likes_count: 0 }
-      ]
+      topics: []
     }
   },
 
