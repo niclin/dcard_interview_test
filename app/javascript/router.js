@@ -10,7 +10,7 @@ const router = new VueRouter({
   mode: 'history',
   routes: [
     { path: '/', component: TopicIndex, name: 'root_path' },
-    { path: '/topics/new', component: TopicCreate, name: 'new_topics_path' },
+    { path: '/topicCreate', component: TopicCreate, name: 'new_topics_path' },
     { path: '/topics/:id', component: TopicShow, name: 'topic_path' },
   ]
 });

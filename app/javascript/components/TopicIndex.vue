@@ -1,30 +1,29 @@
 <template>
   <div>
     <h1>Topics</h1>
-    <router-link to="topics/new">Add Topic</router-link>
+
+    <router-link to="topicCreate">Add Topic</router-link>
 
     <table>
       <thead>
         <tr>
           <th>Title</th>
-          <th>Description</th>
-          <th>Like Count</th>
+          <th>Likes</th>
         </tr>
       </thead>
 
       <tbody>
         <tr v-for="topic in topics" >
-          <td>{{ topic.title }}</td>
-          <td>{{ topic.description }}</td>
           <td>
-            {{ topic.likes_count}}
+            <router-link :to="{ name: 'topic_path', params: { id: topic.id } }">{{ topic.title }} </router-link>
+          </td>
+          <td>
+            {{ topic.likes_count }}
             <button @click="addLike(topic.id)" class="btn btn-primary">like</button>
           </td>
         </tr>
       </tbody>
     </table>
-
-
 
   </div>
 </template>
@@ -34,8 +33,8 @@ export default {
   data () {
     return {
       topics: [
-        { title: 1, description: "Foo", likes_count: 5 },
-        { title: 2, description: "Bar", likes_count: 0 }
+        { title: "Foo", likes_count: 5 },
+        { title: "Bar", likes_count: 0 }
       ]
     }
   },
