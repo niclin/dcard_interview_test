@@ -1,6 +1,6 @@
 <template>
 <div>
-  <h1>Topic {{ $route.params.id }}</h1>
+  <h1>Topic</h1>
   <p>
     <strong>Title:</strong>
     {{ topic.title }}
@@ -19,12 +19,11 @@
 </div>
 </template>
 
-
 <script>
 export default {
   data () {
     return {
-      topic: [ { title: 'Title', description: 'Description', likes_count: 0} ]
+      topic: [ { title: 'Title', description: 'Description', likes_count: 0 } ]
     }
   },
 
@@ -32,10 +31,7 @@ export default {
     currentTopicId () {
       return this.$route.params.id
     }
-
   },
-
-
 
   mounted: function() {
     this.fetchTopic();
@@ -47,7 +43,6 @@ export default {
 
       resource.get().then(function(response){
         this.topic = response.data
-        console.log(response.data)
      });
     }
   }

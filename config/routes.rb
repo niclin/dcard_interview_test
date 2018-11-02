@@ -6,4 +6,6 @@ Rails.application.routes.draw do
   end
 
   root 'topics#index'
+
+  get '/*path', to: 'application#index', format: false
 end
