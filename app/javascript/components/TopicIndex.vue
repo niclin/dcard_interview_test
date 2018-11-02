@@ -1,9 +1,7 @@
 <template>
   <div>
     <h1>Topics</h1>
-    <input type="text" v-model="topics.title" class="form-control" autofocus="true">
-    <input type="text" v-model="topics.description" class="form-control" autofocus="true">
-    <button @click="addTopic()" class="btn btn-primary">Add Topic</button>
+    <router-link to="topics/new">Add Topic</router-link>
 
     <table>
       <thead>
@@ -47,12 +45,6 @@ export default {
   },
 
   methods: {
-    addTopic () {
-       this.$http.post('topics.json', { title: this.topics.title, description: this.topics.description }, {})
-      .then((res) => this.fetchTopics(), this.topic = '')
-      .catch((error) => console.log('Got a problem' + error));
-    },
-
     addLike (id) {
       this.$http.patch(`/topics/${id}/like`, {}, {})
       .then((res) => this.fetchTopics())

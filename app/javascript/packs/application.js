@@ -8,7 +8,8 @@
 // layout file, like app/views/layouts/application.html.erb
 
 import Vue from 'vue'
-import App from '../topics.vue'
+import App from '../App.vue'
+import router from '../router'
 import VueResource from 'vue-resource'
 Vue.use(VueResource);
 
@@ -17,8 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const el = "#topics"
   const app = new Vue({
     el,
+    router,
     render: h => h(App)
   })
-
-  console.log(app)
 })
