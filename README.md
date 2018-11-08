@@ -20,7 +20,7 @@
 安裝前端所需依賴
 
 ```
-yarn install
+$ yarn install
 ```
 
 ### step 2
@@ -28,7 +28,7 @@ yarn install
 安裝 Rails 所需依賴
 
 ```
-bundle install
+$ bundle install
 ```
 
 ### step 3
@@ -36,7 +36,7 @@ bundle install
 建立數據庫
 
 ```
-rake db:create rake db:migrate
+$ rake db:create rake db:migrate
 ```
 
 ### step 4
@@ -44,7 +44,7 @@ rake db:create rake db:migrate
 運行 server
 
 ```
-rails server
+$ rails server
 ```
 
 查看 `localhost:3000` 可以看到符合上述 spec 的畫面
