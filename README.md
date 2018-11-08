@@ -25,13 +25,21 @@ yarn install
 
 ### step 2
 
+安裝 Rails 所需依賴
+
+```
+bundle install
+```
+
+### step 3
+
 建立數據庫
 
 ```
 rake db:create rake db:migrate
 ```
 
-### step 3
+### step 4
 
 運行 server
 
